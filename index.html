@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" xml:lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -231,18 +231,22 @@
       align-items: center;
       justify-content: space-between;
       height: 76px;
+      gap: 12px;
     }
 
     /* Logo */
     .logo {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       text-decoration: none;
+      min-width: 0;
+      flex-shrink: 1;
     }
     .logo-img {
-      height: 44px;
+      height: 40px;
       width: auto;
+      flex-shrink: 0;
     }
     .logo-text {
       display: flex;
@@ -302,17 +306,28 @@
       flex-direction: column;
       gap: 5px;
       cursor: pointer;
-      padding: 4px;
-      background: none;
-      border: none;
+      padding: 10px 12px;
+      background: rgba(133,113,78,0.25);
+      border: 1.5px solid rgba(133,113,78,0.6);
+      border-radius: 4px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: background var(--transition), border-color var(--transition);
+      flex-shrink: 0;
     }
     .menu-toggle span {
       display: block;
-      width: 24px;
-      height: 1.5px;
-      background: var(--charcoal);
+      width: 22px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
       transition: var(--transition);
     }
+    #header.scrolled .menu-toggle {
+      background: transparent;
+      border-color: var(--grey-20);
+    }
+    #header.scrolled .menu-toggle span { background: var(--charcoal); }
 
     /* Mobile nav */
     .mobile-nav {
@@ -329,7 +344,11 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     }
     .mobile-nav.open { display: flex; }
-    .mobile-nav .nav-link { font-size: 15px; }
+    .mobile-nav .nav-link {
+      font-size: 15px;
+      color: var(--grey-80);
+    }
+    .mobile-nav .nav-link:hover { color: var(--gold); }
 
     /* ============================================================
        2. HERO SECTION
@@ -387,6 +406,10 @@
       align-items: center;
       min-height: calc(100vh - 76px);
       padding: 100px 0;
+      width: 100%;
+    }
+    @media (max-width: 768px) {
+      #hero { min-height: auto; padding-bottom: 0; }
     }
 
     /* Left: Content */
@@ -427,6 +450,9 @@
       margin-bottom: 28px;
       opacity: 0;
       animation: fadeUp 0.9s 0.35s forwards;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      hyphens: auto;
     }
     .hero-title em {
       font-style: italic;
@@ -1701,9 +1727,8 @@
        RESPONSIVE
     ============================================================ */
     @media (max-width: 1024px) {
-      .hero-inner { grid-template-columns: 1fr; gap: 60px; }
-      .hero-visual { height: 380px; max-width: 100%; }
-      .hero-badge { left: 0; bottom: -16px; }
+      .hero-inner { gap: 40px; padding: 60px 0; }
+      .hero-content { max-width: 100%; }
 
       .services-header { grid-template-columns: 1fr; gap: 24px; }
       .services-header-right { justify-content: flex-start; }
@@ -1723,40 +1748,81 @@
       .contact-inner { grid-template-columns: 1fr; }
 
       .footer-inner { grid-template-columns: 1fr 1fr; }
+
+      .testimonials-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 768px) {
-      :root { --section-pad: 72px; }
-      .container { padding: 0 24px; }
+      :root { --section-pad: 64px; }
+      .container { padding: 0 20px; }
 
+      /* Header */
       .nav, .header-cta { display: none; }
-      .menu-toggle { display: flex; }
+      .menu-toggle { display: flex; flex-shrink: 0; }
+      .mobile-nav { padding: 24px 20px; }
+      .logo-name { font-size: 15px; letter-spacing: 0.12em; }
+      .logo-tagline { font-size: 8px; }
 
-      .hero-title { font-size: 2.2rem; }
-      .hero-ctas { flex-direction: column; align-items: flex-start; }
+      /* Hero */
+      .hero-inner { padding: 48px 0 60px; min-height: auto; }
+      .hero-content { max-width: 100%; }
+      .hero-title { font-size: clamp(1.7rem, 7vw, 2.4rem); margin-bottom: 20px; }
+      .hero-sub { font-size: 1rem; margin-bottom: 32px; max-width: 100%; }
+      .hero-eyebrow { margin-bottom: 20px; }
+      .hero-ctas { flex-direction: column; align-items: stretch; }
+      .hero-ctas .btn { text-align: center; justify-content: center; }
+      .hero-trust { margin-top: 40px; padding-top: 28px; }
 
+      /* Services */
       .services-grid { grid-template-columns: 1fr; }
       .service-card:nth-child(1) { grid-column: span 1; }
+      .service-card { padding: 36px 28px; }
 
-      .trust-inner { flex-direction: column; align-items: flex-start; }
+      /* Trust */
+      .trust-inner { flex-direction: column; align-items: flex-start; gap: 24px; }
       .trust-divider { display: none; }
       .trust-logos { justify-content: flex-start; }
-      .trust-stats { justify-content: flex-start; }
+      .trust-stats { gap: 28px; }
 
+      /* Approach */
+      .approach-step { padding: 36px 28px; }
+
+      /* About */
+      .portrait-frame { max-width: 100%; aspect-ratio: 4/3; }
+
+      /* Diff */
+      .diff-point { padding: 20px 0; }
+
+      /* CTA */
+      .cta-actions { flex-direction: column; align-items: center; }
+      .cta-actions .btn { width: 100%; max-width: 360px; justify-content: center; }
+
+      /* Form */
       .form-grid { grid-template-columns: 1fr; }
       .form-group.full { grid-column: span 1; }
+      .form-submit-row { flex-direction: column; align-items: stretch; gap: 16px; }
+      .form-submit-row .btn { width: 100%; justify-content: center; }
 
+      /* Footer */
       .footer-inner { grid-template-columns: 1fr; gap: 40px; }
-
       .footer-bottom { flex-direction: column; align-items: flex-start; }
 
-      .hero-trust { flex-direction: column; align-items: flex-start; }
+      /* Testimonials */
+      .testimonial-card { padding: 32px 24px; }
+      .testimonials-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 480px) {
-      .hero-visual { height: 280px; }
-      .hero-badge { display: none; }
+      .container { padding: 0 16px; }
+      .hero-title { font-size: clamp(1.5rem, 7.5vw, 1.9rem); }
+      .hero-sub { font-size: 0.95rem; }
+      .hero-eyebrow { font-size: 10px; }
+      .hero-trust { flex-direction: column; align-items: flex-start; }
       .portrait-badge { bottom: -12px; right: -12px; }
+      .section-title { font-size: clamp(1.5rem, 6vw, 2rem); }
+      .approach-step-title { font-size: 1.25rem; }
+      .service-card { padding: 28px 20px; }
+      .testimonial-card { padding: 28px 20px; }
     }
   </style>
 </head>
