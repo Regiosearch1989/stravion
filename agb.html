@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="de" xml:lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGB – STRAVION Operations Consulting</title>
+  <meta name="description" content="Allgemeine Geschäftsbedingungen von Stravion, Inh. Peric, Wittenbach, Schweiz." />
+  <meta name="robots" content="noindex, follow" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:      #85714e;
+      --gold-pale: #c4aa82;
+      --gold-bg:   #f7f3ed;
+      --charcoal:  #141414;
+      --grey-80:   #333333;
+      --grey-60:   #555555;
+      --grey-20:   #cccccc;
+      --grey-10:   #efefef;
+      --grey-05:   #f8f8f8;
+      --white:     #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      color: var(--grey-80);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a { color: var(--gold); text-decoration: none; transition: opacity 0.2s; }
+    a:hover { opacity: 0.75; }
+
+    /* ── Header ── */
+    header {
+      background: var(--charcoal);
+      padding: 0 40px;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(133,113,78,0.2);
+    }
+    .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .logo img { height: 40px; width: auto; filter: brightness(0) invert(1); }
+    .logo-text { line-height: 1; }
+    .logo-name {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      color: var(--white);
+    }
+    .logo-tagline {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-pale);
+      margin-top: 3px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.04em;
+      transition: color 0.25s;
+    }
+    .back-link:hover { color: var(--gold-pale); opacity: 1; }
+    .back-link svg { width: 16px; height: 16px; }
+
+    /* ── Page Hero ── */
+    .page-hero {
+      background: var(--charcoal);
+      padding: 64px 40px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(133,113,78,0.4), transparent);
+    }
+    .page-hero-inner { max-width: 860px; margin: 0 auto; }
+    .page-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-pale);
+      margin-bottom: 16px;
+    }
+    .page-label::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold-pale);
+    }
+    .page-hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 10px;
+    }
+    .page-hero-meta {
+      font-size: 13px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Layout ── */
+    .page-body {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 0;
+      max-width: 1060px;
+      margin: 0 auto;
+      padding: 72px 40px 100px;
+      align-items: start;
+    }
+
+    /* Sticky TOC */
+    .toc {
+      position: sticky;
+      top: 96px;
+      padding-right: 40px;
+    }
+    .toc-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--grey-60);
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--grey-10);
+    }
+    .toc-list { display: flex; flex-direction: column; gap: 2px; }
+    .toc-item {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 12px;
+      color: var(--grey-60);
+      padding: 6px 10px;
+      border-radius: 3px;
+      transition: background 0.2s, color 0.2s;
+      cursor: pointer;
+    }
+    .toc-item:hover { background: var(--grey-05); color: var(--charcoal); }
+    .toc-item-num {
+      font-size: 10px;
+      font-weight: 600;
+      color: var(--gold);
+      opacity: 0.7;
+      flex-shrink: 0;
+      width: 18px;
+    }
+
+    /* Content */
+    .content { min-width: 0; }
+
+    /* Intro card */
+    .intro-card {
+      background: var(--gold-bg);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      padding: 24px 28px;
+      margin-bottom: 52px;
+    }
+    .intro-card p {
+      font-size: 13px;
+      color: var(--grey-60);
+      line-height: 1.7;
+    }
+    .intro-card strong { color: var(--charcoal); }
+
+    /* Sections */
+    .agb-section {
+      margin-bottom: 0;
+      padding: 36px 0;
+      border-bottom: 1px solid var(--grey-10);
+      scroll-margin-top: 96px;
+    }
+    .agb-section:last-child { border-bottom: none; }
+
+    .agb-section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .agb-section-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.5;
+      flex-shrink: 0;
+      min-width: 32px;
+      line-height: 1;
+    }
+    .agb-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      letter-spacing: 0.02em;
+      line-height: 1.35;
+    }
+
+    /* Paragraphs within section */
+    .agb-paras {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-left: 46px;
+    }
+    .agb-para {
+      display: flex;
+      gap: 12px;
+      font-size: 13.5px;
+      color: var(--grey-60);
+      line-height: 1.85;
+    }
+    .agb-para-num {
+      flex-shrink: 0;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--grey-20);
+      padding-top: 2px;
+      min-width: 26px;
+    }
+    .agb-para-text { flex: 1; }
+
+    /* Single-paragraph sections */
+    .agb-single {
+      padding-left: 46px;
+      font-size: 13.5px;
+      color: var(--grey-60);
+      line-height: 1.85;
+    }
+
+    /* Company footer strip */
+    .company-strip {
+      margin-top: 52px;
+      padding: 20px 24px;
+      background: var(--grey-05);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .company-strip span {
+      font-size: 12px;
+      color: var(--grey-60);
+    }
+    .company-strip span + span::before {
+      content: '·';
+      margin-right: 20px;
+      color: var(--grey-20);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--charcoal);
+      padding: 32px 40px;
+      text-align: center;
+      border-top: 1px solid rgba(133,113,78,0.15);
+    }
+    footer p { font-size: 12px; color: rgba(255,255,255,0.25); }
+    footer a { color: rgba(255,255,255,0.4); }
+
+    @media (max-width: 860px) {
+      .page-body { grid-template-columns: 1fr; padding: 48px 24px 72px; }
+      .toc { display: none; }
+    }
+    @media (max-width: 640px) {
+      header { padding: 0 20px; }
+      .page-hero { padding: 48px 20px 56px; }
+      .agb-paras, .agb-single { padding-left: 0; }
+      footer { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="logo-stravion.png" alt="STRAVION" onerror="this.style.display='none';" />
+      <div class="logo-text">
+        <span class="logo-name">STRAVION</span>
+        <span class="logo-tagline">Operations Consulting</span>
+      </div>
+    </a>
+    <a href="index.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M19 12H5M5 12l7 7M5 12l7-7"/>
+      </svg>
+      Zurück zur Website
+    </a>
+  </header>
+
+  <!-- Hero -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <span class="page-label">Rechtliches</span>
+      <h1>Allgemeine Geschäftsbedingungen</h1>
+      <p class="page-hero-meta">Stravion, Inh. Peric &nbsp;·&nbsp; Sitz: Wittenbach, Schweiz &nbsp;·&nbsp; Stand: 2025</p>
+    </div>
+  </div>
+
+  <!-- Body -->
+  <div class="page-body">
+
+    <!-- Table of Contents -->
+    <aside class="toc">
+      <p class="toc-title">Inhalt</p>
+      <div class="toc-list">
+        <a href="#s1" class="toc-item"><span class="toc-item-num">1.</span>Geltungsbereich</a>
+        <a href="#s2" class="toc-item"><span class="toc-item-num">2.</span>Vertragsabschluss</a>
+        <a href="#s3" class="toc-item"><span class="toc-item-num">3.</span>Leistungen</a>
+        <a href="#s4" class="toc-item"><span class="toc-item-num">4.</span>Leistungsänderungen</a>
+        <a href="#s5" class="toc-item"><span class="toc-item-num">5.</span>Mitwirkung</a>
+        <a href="#s6" class="toc-item"><span class="toc-item-num">6.</span>Dritte</a>
+        <a href="#s7" class="toc-item"><span class="toc-item-num">7.</span>Termine</a>
+        <a href="#s8" class="toc-item"><span class="toc-item-num">8.</span>Vergütung</a>
+        <a href="#s9" class="toc-item"><span class="toc-item-num">9.</span>Abnahme</a>
+        <a href="#s10" class="toc-item"><span class="toc-item-num">10.</span>Vertraulichkeit</a>
+        <a href="#s11" class="toc-item"><span class="toc-item-num">11.</span>Geist. Eigentum</a>
+        <a href="#s12" class="toc-item"><span class="toc-item-num">12.</span>Gewährleistung</a>
+        <a href="#s13" class="toc-item"><span class="toc-item-num">13.</span>Haftung</a>
+        <a href="#s14" class="toc-item"><span class="toc-item-num">14.</span>Freistellung</a>
+        <a href="#s15" class="toc-item"><span class="toc-item-num">15.</span>Vertragsdauer</a>
+        <a href="#s16" class="toc-item"><span class="toc-item-num">16.</span>Höhere Gewalt</a>
+        <a href="#s17" class="toc-item"><span class="toc-item-num">17.</span>Schluss</a>
+      </div>
+    </aside>
+
+    <!-- Content -->
+    <main class="content">
+
+      <div class="intro-card">
+        <p>Diese AGB gelten für sämtliche Angebote, Verträge und Leistungen von <strong>Stravion, Inh. Milisav Peric</strong>, Ringstrasse 12, 9300 Wittenbach, Schweiz. Fragen: <a href="mailto:info@stravion.ch">info@stravion.ch</a> &nbsp;·&nbsp; UID: CHE-330.554.380</p>
+      </div>
+
+      <!-- 1 -->
+      <div class="agb-section" id="s1">
+        <div class="agb-section-header">
+          <span class="agb-section-num">1.</span>
+          <h2>Geltungsbereich</h2>
+        </div>
+        <div class="agb-paras">
+          <div class="agb-para"><span class="agb-para-num">1.1</span><span class="agb-para-text">Diese Allgemeinen Geschäftsbedingungen („AGB") gelten für sämtliche Angebote, Verträge, Lieferungen und Leistungen von Stravion, Inh. Milisav Peric, mit Sitz in Wittenbach, Schweiz („Stravion"), gegenüber seinen Kunden („Kunde").</span></div>
+          <div class="agb-para"><span class="agb-para-num">1.2</span><span class="agb-para-text">Allgemeine Geschäftsbedingungen des Kunden finden keine Anwendung, auch wenn Stravion ihnen nicht ausdrücklich widerspricht. Vorbehalten bleiben zwingende gesetzliche Bestimmungen.</span></div>
+          <div class="agb-para"><span class="agb-para-num">1.3</span><span class="agb-para-text">Abweichungen, Nebenabreden oder Ergänzungen bedürfen zu ihrer Gültigkeit der Schrift- oder Textform (insbesondere E-Mail). Individuell schriftlich vereinbarte Regelungen gehen diesen AGB vor.</span></div>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="agb-section" id="s2">
+        <div class="agb-section-header">
+          <span class="agb-section-num">2.</span>
+          <h2>Vertragsabschluss</h2>
+        </div>
+        <div class="agb-paras">
+          <div class="agb-para"><span class="agb-para-num">2.1</span><span class="agb-para-text">Angebote von Stravion sind, sofern nicht ausdrücklich als verbindlich bezeichnet, freibleibend und unverbindlich.</span></div>
+          <div class="agb-para"><span class="agb-para-num">2.2</span><span class="agb-para-text">Ein Vertrag kommt durch schriftliche Offerte und deren Annahme, durch Auftragsbestätigung, durch schriftliche Beauftragung per E-Mail oder durch tatsächlichen Beginn der Leistungserbringung zustande.</span></div>
+          <div class="agb-para"><span class="agb-para-num">2.3</span><span class="agb-para-text">Massgeblich für Art und Umfang der geschuldeten Leistungen ist die jeweilige Offerte, Auftragsbestätigung oder Einzelvereinbarung.</span></div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="agb-section" id="s3">
+        <div class="agb-section-header">
+          <span class="agb-section-num">3.</span>
+          <h2>Leistungen von Stravion</h2>
+        </div>
+        <div class="agb-paras">
+          <div class="agb-para"><span class="agb-para-num">3.1</span><span class="agb-para-text">Stravion erbringt insbesondere Leistungen in den Bereichen Unternehmensberatung, Operations Consulting, Prozessanalyse, Prozessoptimierung, Organisationsentwicklung, Projektbegleitung, Umsetzungsunterstützung, Workshops, Sparring, Lieferanten- und Potenzialanalysen sowie damit zusammenhängende Beratungs- und Unterstützungsleistungen.</span></div>
+          <div class="agb-para"><span class="agb-para-num">3.2</span><span class="agb-para-text">Soweit nicht ausdrücklich schriftlich anders vereinbart, schuldet Stravion eine fachgerechte Tätigkeit nach bestem Wissen und Gewissen, nicht jedoch einen bestimmten wirtschaftlichen, technischen, zeitlichen oder betrieblichen Erfolg.</span></div>
+          <div class="agb-para"><span class="agb-para-num">3.3</span><span class="agb-para-text">Rechts-, Steuer-, Revisions-, Finanzmarkt-, Exportkontroll- oder sonstige bewilligungspflichtige Beratung ist nicht geschuldet, sofern dies nicht ausdrücklich und schriftlich vereinbart wurde.</span></div>
+          <div class="agb-para"><span class="agb-para-num">3.4</span><span class="agb-para-text">Soweit nicht ausdrücklich schriftlich anders vereinbart, erbringt Stravion Beratungs-, Analyse-, Konzeptions-, Koordinations- und Unterstützungsleistungen. Stravion übernimmt ohne separate schriftliche Vereinbarung keine Organfunktion, keine gesetzliche Vertreterstellung, keine Arbeitgeberfunktion und keine umfassende Gesamtverantwortung für den Betrieb des Kunden.</span></div>
+          <div class="agb-para"><span class="agb-para-num">3.5</span><span class="agb-para-text">Unternehmerische, personelle, finanzielle, rechtliche, sicherheitsrelevante und regulatorische Entscheide sowie deren Freigabe, Umsetzung und Kontrolle bleiben Sache des Kunden, sofern deren Übertragung nicht ausdrücklich schriftlich und rechtlich zulässig vereinbart wurde.</span></div>
+          <div class="agb-para"><span class="agb-para-num">3.6</span><span class="agb-para-text">Empfehlungen, Priorisierungen, Massnahmenpläne, Projektbegleitungen oder Umsetzungsunterstützungen von Stravion entbinden den Kunden nicht von seiner eigenen Prüfungs-, Freigabe- und Entscheidungsverantwortung.</span></div>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="agb-section" id="s4">
+        <div class="agb-section-header">
+          <span class="agb-section-num">4.</span>
+          <h2>Leistungsänderungen</h2>
+        </div>
+        <div class="agb-paras">
+          <div class="agb-para"><span class="agb-para-num">4.1</span><span class="agb-para-text">Änderungen oder Erweiterungen des vereinbarten Leistungsumfangs bedürfen der Abstimmung zwischen den Parteien und können zu einer Anpassung von Honorar, Terminen und Spesen führen.</span></div>
+          <div class="agb-para"><span class="agb-para-num">4.2</span><span class="agb-para-text">Zusätzliche Leistungen, die auf Wunsch oder durch Verursachung des Kunden erbracht werden, gelten als separat vergütungspflichtig.</span></div>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="agb-section" id="s5">
+        <div class="agb-section-header">
+          <span class="agb-section-num">5.</span>
+          <h2>Mitwirkungspflichten des Kunden</h2>
+        </div>
+        <div class="agb-paras">
+          <div class="agb-para"><span class="agb-para-num">5.1</span><span class="agb-para-text">Der Kunde stellt Stravion sämtliche für die Leistungserbringung erforderlichen Informationen, Unterlagen, Zugänge, Ansprechpartner, Entscheidungen und Freigaben vollständig, richtig und rechtzeitig zur Verfügung.</span></div>
+          <div class="agb-para"><span class="agb-para-num">5.2</span><span class="agb-para-text">Stravion ist berechtigt, sich auf die Richtigkeit, Vollständigkeit und Rechtmässigkeit der vom Kunden oder von Dritten im Verantwortungsbereich des Kunden gelieferten Informationen, Daten und Unterlagen zu verlassen, soweit nicht ausdrücklich eine Prüfung vereinbart wurde.</span></div>
+          <div class="agb-para"><span class="agb-para-num">5.3</span><span class="agb-para-text">Verzögerungen, Mehraufwand, Fehlbeurteilungen oder Schäden, die auf verspätete, unvollständige, unrichtige oder irreführende Angaben oder auf unterlassene Mitwirkung des Kunden zurückzuführen sind, gehen ausschliesslich zulasten des Kunden. Hierdurch entstehender Mehraufwand von Stravion ist zusätzlich zu vergüten.</span></div>
+          <div class="agb-para"><span class="agb-para-num">5.4</span><span class="agb-para-text">Der Kunde bleibt für die Organisation seines Betriebs, für Arbeitssicherheit, Instruktion seines Personals, rechtliche und regulatorische Compliance, Datenfreigaben, Systemberechtigungen sowie für die Prüfung und Freigabe von durch Stravion vorgeschlagenen oder begleiteten Massnahmen verantwortlich, soweit nicht im Einzelfall schriftlich etwas anderes vereinbart wurde.</span></div>
+          <div class="agb-para"><span class="agb-para-num">5.5</span><span class="agb-para-text">Der Kunde hat Stravion auf projektrelevante Risiken, bekannte Mängel, Sicherheitsvorschriften, laufende Störungen, sensible Betriebszustände, Vertragsbindungen gegenüber Dritten sowie behördliche oder normative Vorgaben rechtzeitig hinzuweisen. Unterbleibt dies, entfällt eine Haftung von Stravion insoweit, als der Schaden darauf zurückzuführen ist.</span></div>
+        </div>
+      </div>
+
+      <!-- 6 -->
+      <div class="agb-section" id="s6">
+        <div class="agb-section-header">
+          <span class="agb-section-num">6.</span>
+          <h2>Beizug von Dritten / Vermittlungsleistungen</h2>
+        </div>
+        <div class="agb-paras">
+          <div class="agb-para"><span class="agb-para-num">6.1</span><span class="agb-para-text">Stravion ist berechtigt, zur Vertragserfüllung Hilfspersonen, externe Spezialisten, Partnerunternehmen oder Subunternehmer beizuziehen.</span></div>
+          <div class="agb-para"><span class="agb-para-num">6.2</span><span class="agb-para-text">Soweit Stravion dem Kunden Lieferanten, Partnerunternehmen oder sonstige Dritte vorstellt, empfiehlt oder vermittelt, kommt ein allfälliger Vertrag über Werk-, Liefer- oder sonstige Leistungen grundsätzlich direkt zwischen dem Kunden und dem betreffenden Dritten zustande, sofern nicht ausdrücklich schriftlich etwas anderes vereinbart wurde.</span></div>
+          <div class="agb-para"><span class="agb-para-num">6.3</span><span class="agb-para-text">Stravion übernimmt bei Nachweis-, Such-, Screening-, Empfehlungs- oder Vermittlungsleistungen insbesondere keine Gewähr und keine Haftung für Verfügbarkeit, Bonität, Preis, Termine, Ausführung, Qualität, Zulassungen, Zertifizierungen, Konformität, Gesetzeskonformität oder sonstige Leistungen des betreffenden Dritten. Die Prüfung und Beauftragung eines Dritten erfolgt ausschliesslich in eigener Verantwortung des Kunden.</span></div>
+          <div class="agb-para"><span class="agb-para-num">6.4</span><span class="agb-para-text">Soweit gesetzlich zulässig, beschränkt sich eine allfällige Haftung von Stravion für beigezogene Dritte auf deren sorgfältige Auswahl und Instruktion, sofern Stravion die Leistung nicht ausdrücklich in eigener Verantwortung übernommen hat.</span></div>
+        </div>
+      </div>
+
+      <!-- 7 -->
+      <div class="agb-section" id="s7">
+        <div class="agb-section-header">
+          <span class="agb-section-num">7.</span>
+          <h2>Termine und Fristen</h2>
+        </div>
+        <div class="agb-paras">
+          <div class="agb-para"><span class="agb-para-num">7.1</span><span class="agb-para-text">Termine und Fristen gelten nur dann als verbindlich, wenn sie von Stravion ausdrücklich schriftlich als verbindlich bestätigt wurden.</span></div>
+          <div class="agb-para"><span class="agb-para-num">7.2</span><span class="agb-para-text">Terminverschiebungen aufgrund fehlender Mitwirkung, verspäteter Freigaben, Änderungswünschen, Lieferengpässen, Krankheit, höherer Gewalt, Ausfällen von Kommunikationsmitteln oder sonstigen Umständen ausserhalb des Einflussbereichs von Stravion berechtigen nicht zu Schadenersatzansprüchen gegen Stravion.</span></div>
+        </div>
+      </div>
+
+      <!-- 8 -->
+      <div class="agb-section" id="s8">
+        <div class="agb-section-header">
+          <span class="agb-section-num">8.</span>
+          <h2>Vergütung, Spesen und Zahlungsbedingungen</h2>
+        </div>
+        <div class="agb-paras">
+          <div class="agb-para"><span class="agb-para-num">8.1</span><span class="agb-para-text">Die Vergütung richtet sich nach Offerte, Auftragsbestätigung, Einzelvereinbarung oder effektivem Aufwand. Sämtliche Preise verstehen sich, sofern nicht ausdrücklich anders angegeben, exklusive Mehrwertsteuer.</span></div>
+          <div class="agb-para"><span class="agb-para-num">8.2</span><span class="agb-para-text">Stravion ist berechtigt, Vorschüsse, Akontozahlungen sowie periodische oder projektbezogene Teilrechnungen zu stellen.</span></div>
+          <div class="agb-para"><span class="agb-para-num">8.3</span><span class="agb-para-text">Sofern nicht anders vereinbart, sind Rechnungen innert 14 Tagen netto ohne Abzug zahlbar.</span></div>
+          <div class="agb-para"><span class="agb-para-num">8.4</span><span class="agb-para-text">Bei Zahlungsverzug gerät der Kunde ohne Mahnung in Verzug und schuldet Verzugszins von 5 % p.a. sowie angemessene Mahn-, Inkasso- und Rechtsverfolgungskosten.</span></div>
+          <div class="agb-para"><span class="agb-para-num">8.5</span><span class="agb-para-text">Der Kunde ist nicht berechtigt, Gegenforderungen zu verrechnen oder Zahlungen wegen behaupteter Mängel, Gegenansprüche oder Zurückbehaltungsrechte zurückzuhalten.</span></div>
+        </div>
+      </div>
+
+      <!-- 9 -->
+      <div class="agb-section" id="s9">
+        <div class="agb-section-header">
+          <span class="agb-section-num">9.</span>
+          <h2>Prüfung und Genehmigung von Arbeitsergebnissen</h2>
+        </div>
+        <div class="agb-paras">
+          <div class="agb-para"><span class="agb-para-num">9.1</span><span class="agb-para-text">Der Kunde hat übergebene Arbeitsergebnisse, Konzepte, Auswertungen, Berichte, Präsentationen, Empfehlungen oder sonstige Deliverables unverzüglich zu prüfen.</span></div>
+          <div class="agb-para"><span class="agb-para-num">9.2</span><span class="agb-para-text">Beanstandungen sind innert fünf Arbeitstagen ab Übergabe schriftlich mitzuteilen. Erfolgt innert dieser Frist keine begründete Rüge, gelten die betreffenden Leistungen als genehmigt.</span></div>
+          <div class="agb-para"><span class="agb-para-num">9.3</span><span class="agb-para-text">Bei rechtzeitig gerügten Mängeln hat Stravion zunächst das Recht auf Nachbesserung innert angemessener Frist. Weitergehende Rechte bestehen nur im Rahmen der zwingenden gesetzlichen Bestimmungen und dieser AGB.</span></div>
+        </div>
+      </div>
+
+      <!-- 10 -->
+      <div class="agb-section" id="s10">
+        <div class="agb-section-header">
+          <span class="agb-section-num">10.</span>
+          <h2>Vertraulichkeit und Datenschutz</h2>
+        </div>
+        <div class="agb-paras">
+          <div class="agb-para"><span class="agb-para-num">10.1</span><span class="agb-para-text">Beide Parteien verpflichten sich, sämtliche ihnen im Zusammenhang mit dem Vertragsverhältnis bekanntwerdenden nicht öffentlichen kaufmännischen, technischen, organisatorischen und personenbezogenen Informationen vertraulich zu behandeln.</span></div>
+          <div class="agb-para"><span class="agb-para-num">10.2</span><span class="agb-para-text">Die Geheimhaltungspflicht gilt nicht für Informationen, die nachweislich allgemein bekannt sind, ohne Vertragsverletzung bekannt werden, aufgrund gesetzlicher Pflicht offenzulegen sind oder mit vorgängiger Zustimmung der anderen Partei offengelegt werden dürfen.</span></div>
+          <div class="agb-para"><span class="agb-para-num">10.3</span><span class="agb-para-text">Stravion darf personenbezogene Daten im Rahmen der Vertragsabwicklung nach Massgabe des anwendbaren Datenschutzrechts bearbeiten und, soweit erforderlich, an beigezogene Dritte oder Auftragsbearbeiter weitergeben.</span></div>
+          <div class="agb-para"><span class="agb-para-num">10.4</span><span class="agb-para-text">Der Kunde garantiert, dass von ihm übermittelte Daten rechtmässig erhoben und zur Bearbeitung durch Stravion freigegeben sind. Der Kunde hält Stravion von Ansprüchen Dritter frei, die aus einer rechtswidrigen Datenübermittlung oder Datenverwendung im Verantwortungsbereich des Kunden resultieren.</span></div>
+        </div>
+      </div>
+
+      <!-- 11 -->
+      <div class="agb-section" id="s11">
+        <div class="agb-section-header">
+          <span class="agb-section-num">11.</span>
+          <h2>Geistiges Eigentum und Nutzungsrechte</h2>
+        </div>
+        <div class="agb-paras">
+          <div class="agb-para"><span class="agb-para-num">11.1</span><span class="agb-para-text">Sämtliche Immaterialgüterrechte, Urheberrechte, Konzepte, Methoden, Vorlagen, Analysen, Modelle, Präsentationen, Kalkulationslogiken, Formulare, Tools, Berichte und sonstige Arbeitsergebnisse verbleiben, soweit nicht ausdrücklich schriftlich anders vereinbart, bei Stravion.</span></div>
+          <div class="agb-para"><span class="agb-para-num">11.2</span><span class="agb-para-text">Mit vollständiger Bezahlung erhält der Kunde ein nicht ausschliessliches, nicht übertragbares Nutzungsrecht zum eigenen internen Gebrauch im Rahmen des konkreten Vertragszwecks.</span></div>
+          <div class="agb-para"><span class="agb-para-num">11.3</span><span class="agb-para-text">Eine Weitergabe, Veröffentlichung, Bearbeitung oder kommerzielle Weiterverwendung durch den Kunden oder durch mit ihm verbundene Unternehmen ist nur mit vorgängiger schriftlicher Zustimmung von Stravion zulässig.</span></div>
+        </div>
+      </div>
+
+      <!-- 12 -->
+      <div class="agb-section" id="s12">
+        <div class="agb-section-header">
+          <span class="agb-section-num">12.</span>
+          <h2>Gewährleistung / Keine Erfolgsgarantie</h2>
+        </div>
+        <div class="agb-paras">
+          <div class="agb-para"><span class="agb-para-num">12.1</span><span class="agb-para-text">Stravion erbringt die Leistungen mit branchenüblicher Sorgfalt, nach bestem Wissen und auf Grundlage der zum Leistungszeitpunkt verfügbaren Informationen. Eine über die sorgfältige Vertragserfüllung hinausgehende Gewährleistung oder Erfolgshaftung wird nicht übernommen.</span></div>
+          <div class="agb-para"><span class="agb-para-num">12.2</span><span class="agb-para-text">Stravion übernimmt insbesondere keine Garantie oder Zusicherung für Einsparungen, Umsatzsteigerungen, Produktivitätsgewinne, Termin- oder Budgeteinhaltung, Verfügbarkeit von Personal, Lieferfähigkeit Dritter, behördliche Genehmigungen oder sonstige wirtschaftliche Resultate.</span></div>
+          <div class="agb-para"><span class="agb-para-num">12.3</span><span class="agb-para-text">Der Kunde bleibt für sämtliche unternehmerischen, personellen, organisatorischen, rechtlichen, finanziellen, sicherheitsrelevanten und regulatorischen Entscheidungen selbst verantwortlich, auch wenn Stravion Konzepte, Empfehlungen, Analysen, Massnahmenpläne oder Projektbegleitungen erarbeitet oder begleitet.</span></div>
+          <div class="agb-para"><span class="agb-para-num">12.4</span><span class="agb-para-text">Soweit Stravion Umsetzungsunterstützung oder Projektbegleitung leistet, erfolgen konkrete Massnahmen auf Grundlage der durch den Kunden erteilten Freigaben, Ressourcen, Informationen und Weisungen. Stravion haftet nicht für Nachteile, die daraus entstehen, dass der Kunde empfohlene Massnahmen ablehnt, verzögert, unvollständig umsetzt oder entgegen fachlicher Empfehlung andere Entscheidungen trifft.</span></div>
+          <div class="agb-para"><span class="agb-para-num">12.5</span><span class="agb-para-text">Stravion schuldet keine permanente Überwachung des gesamten Betriebs, keine lückenlose Kontrolle aller Prozesse und keine vollständige Risikoelimination. Analysen, Stichproben, Priorisierungen und Empfehlungen schliessen systembedingt Restrisiken nicht aus.</span></div>
+          <div class="agb-para"><span class="agb-para-num">12.6</span><span class="agb-para-text">Ohne separate schriftliche Vereinbarung übernimmt Stravion keine Verantwortung als Organ, formeller Betriebsleiter, Sicherheitsbeauftragter, Hersteller, Inverkehrbringer, Arbeitgeber oder Compliance-Verantwortlicher des Kunden.</span></div>
+        </div>
+      </div>
+
+      <!-- 13 -->
+      <div class="agb-section" id="s13">
+        <div class="agb-section-header">
+          <span class="agb-section-num">13.</span>
+          <h2>Haftung</h2>
+        </div>
+        <div class="agb-paras">
+          <div class="agb-para"><span class="agb-para-num">13.1</span><span class="agb-para-text">Stravion haftet – gleich aus welchem Rechtsgrund – ausschliesslich für direkte Schäden, die dem Kunden nachweislich durch eine vorsätzliche oder grobfahrlässige Vertragsverletzung von Stravion verursacht wurden.</span></div>
+          <div class="agb-para"><span class="agb-para-num">13.2</span><span class="agb-para-text">Soweit gesetzlich zulässig, ist jede Haftung für leichte Fahrlässigkeit ausgeschlossen. Nicht ausgeschlossen werden kann nach schweizerischem Recht eine zum Voraus wegbedungene Haftung für rechtswidrige Absicht oder grobe Fahrlässigkeit.</span></div>
+          <div class="agb-para"><span class="agb-para-num">13.3</span><span class="agb-para-text">In jedem Fall ausgeschlossen ist, soweit gesetzlich zulässig, die Haftung für indirekte Schäden und Folgeschäden, namentlich entgangenen Gewinn, Produktionsausfall, Stillstandskosten, Kapazitätsverluste, Nutzungsausfall, Reputationsschäden, Vertragsstrafen gegenüber Dritten, Drittansprüche, Rückrufkosten, Datenverluste, Mehraufwand des Kunden oder nicht realisierte Einsparungen.</span></div>
+          <div class="agb-para"><span class="agb-para-num">13.4</span><span class="agb-para-text">Ebenfalls ausgeschlossen ist, soweit gesetzlich zulässig, jede Haftung für Schäden, Nachteile oder Mehrkosten, die auf kundenseitige Vorgaben, Weisungen, Freigaben, Unterlassungen, verspätete Entscheide, unvollständige Mitwirkung, fehlerhafte Daten, Systemausfälle, Sicherheitsmängel, fehlende Ressourcen, Eingriffe des Kunden oder seiner Mitarbeitenden sowie auf Handlungen oder Unterlassungen beigezogener Dritter zurückzuführen sind.</span></div>
+          <div class="agb-para"><span class="agb-para-num">13.5</span><span class="agb-para-text">Bei Nachweis-, Empfehlungs-, Vermittlungs-, Screening- oder Lieferantenleistungen haftet Stravion nicht für Leistung, Bonität, Verfügbarkeit, Qualität, Termineinhaltung, Gesetzeskonformität oder sonstiges Verhalten der empfohlenen, vermittelten oder beigezogenen Dritten; vorbehalten bleibt eine Haftung für deren sorgfältige Auswahl und Instruktion, soweit eine solche gesetzlich zwingend ist.</span></div>
+          <div class="agb-para"><span class="agb-para-num">13.6</span><span class="agb-para-text">Soweit eine Haftung von Stravion trotz dieser Bestimmungen rechtskräftig bejaht wird, ist sie – soweit gesetzlich zulässig – auf den niedrigeren Betrag von (i) der für das betroffene Mandat in den letzten 12 Monaten effektiv bezahlten Vergütung oder (ii) CHF 50'000 begrenzt.</span></div>
+          <div class="agb-para"><span class="agb-para-num">13.7</span><span class="agb-para-text">Ansprüche des Kunden verjähren, soweit gesetzlich zulässig, innert 12 Monaten ab Kenntnis des Schadens und der anspruchsbegründenden Umstände, spätestens jedoch 24 Monate nach der letzten Leistungserbringung im betroffenen Mandat.</span></div>
+          <div class="agb-para"><span class="agb-para-num">13.8</span><span class="agb-para-text">Mitarbeitende, beigezogene Spezialisten, Hilfspersonen und Partnerunternehmen von Stravion können, soweit gesetzlich zulässig, nicht direkt vom Kunden in Anspruch genommen werden. Vorbehalten bleiben zwingende gesetzliche Ansprüche.</span></div>
+        </div>
+      </div>
+
+      <!-- 14 -->
+      <div class="agb-section" id="s14">
+        <div class="agb-section-header">
+          <span class="agb-section-num">14.</span>
+          <h2>Freistellung</h2>
+        </div>
+        <p class="agb-single">Der Kunde hält Stravion, deren Mitarbeitende und beigezogene Dritte auf erstes Verlangen von sämtlichen Ansprüchen, Schäden, Kosten, Bussen, Aufwendungen und Rechtsverfolgungskosten Dritter frei, soweit diese auf Weisungen, Daten, Unterlagen, Entscheidungen, Umsetzungsakten oder Pflichtverletzungen aus dem Verantwortungsbereich des Kunden zurückzuführen sind.</p>
+      </div>
+
+      <!-- 15 -->
+      <div class="agb-section" id="s15">
+        <div class="agb-section-header">
+          <span class="agb-section-num">15.</span>
+          <h2>Vertragsdauer und Beendigung</h2>
+        </div>
+        <div class="agb-paras">
+          <div class="agb-para"><span class="agb-para-num">15.1</span><span class="agb-para-text">Die Vertragsdauer richtet sich nach der jeweiligen Einzelvereinbarung.</span></div>
+          <div class="agb-para"><span class="agb-para-num">15.2</span><span class="agb-para-text">Soweit das Vertragsverhältnis rechtlich ganz oder teilweise als Auftrag im Sinne von Art. 394 ff. OR zu qualifizieren ist, bleibt das gesetzliche Recht zur jederzeitigen Kündigung vorbehalten. Bei Kündigung zur Unzeit bleibt Schadenersatz vorbehalten.</span></div>
+          <div class="agb-para"><span class="agb-para-num">15.3</span><span class="agb-para-text">Bei Dauerschuldverhältnissen oder Rahmenvereinbarungen kann, sofern nichts anderes vereinbart ist, mit einer Frist von 30 Tagen auf Monatsende schriftlich gekündigt werden. Bereits erbrachte Leistungen, angefallene Spesen, gebundene Drittleistungen sowie der durch eine unzeitige Kündigung verursachte Schaden sind voll zu vergüten.</span></div>
+        </div>
+      </div>
+
+      <!-- 16 -->
+      <div class="agb-section" id="s16">
+        <div class="agb-section-header">
+          <span class="agb-section-num">16.</span>
+          <h2>Höhere Gewalt</h2>
+        </div>
+        <p class="agb-single">Keine Partei haftet für die Nichterfüllung oder verspätete Erfüllung ihrer Pflichten, soweit diese auf Ereignisse höherer Gewalt oder andere unvorhersehbare, unabwendbare und ausserhalb ihres Einflussbereichs liegende Umstände zurückzuführen ist. Die betroffene Partei informiert die andere Partei so rasch als möglich über Eintritt und voraussichtliche Dauer des Ereignisses.</p>
+      </div>
+
+      <!-- 17 -->
+      <div class="agb-section" id="s17">
+        <div class="agb-section-header">
+          <span class="agb-section-num">17.</span>
+          <h2>Schlussbestimmungen</h2>
+        </div>
+        <div class="agb-paras">
+          <div class="agb-para"><span class="agb-para-num">17.1</span><span class="agb-para-text">Änderungen und Ergänzungen dieser AGB oder des Vertrags bedürfen der Schrift- oder Textform.</span></div>
+          <div class="agb-para"><span class="agb-para-num">17.2</span><span class="agb-para-text">Sollten einzelne Bestimmungen dieser AGB ganz oder teilweise unwirksam oder nicht durchsetzbar sein, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. Anstelle der unwirksamen Bestimmung gilt eine Regelung, die dem wirtschaftlichen Zweck am nächsten kommt und rechtlich zulässig ist.</span></div>
+          <div class="agb-para"><span class="agb-para-num">17.3</span><span class="agb-para-text">Es gilt ausschliesslich schweizerisches materielles Recht unter Ausschluss des Kollisionsrechts und des UN-Kaufrechts.</span></div>
+          <div class="agb-para"><span class="agb-para-num">17.4</span><span class="agb-para-text">Ausschliesslicher Gerichtsstand ist, soweit gesetzlich zulässig, der Sitz von Stravion in Wittenbach, Schweiz. Stravion ist jedoch berechtigt, den Kunden auch an dessen Sitz/Wohnsitz zu belangen.</span></div>
+        </div>
+      </div>
+
+      <!-- Company strip -->
+      <div class="company-strip">
+        <span>Stravion, Inh. Peric</span>
+        <span>Ringstrasse 12, 9300 Wittenbach</span>
+        <span><a href="mailto:info@stravion.ch">info@stravion.ch</a></span>
+        <span>UID: CHE-330.554.380</span>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 STRAVION · Dejan Peric · Ringstrasse 12, 9300 Wittenbach &nbsp;|&nbsp;
+      <a href="impressum.html">Impressum</a> &nbsp;|&nbsp;
+      <a href="datenschutz.html">Datenschutz</a> &nbsp;|&nbsp;
+      <a href="index.html">Startseite</a>
+    </p>
+  </footer>
+
+</body>
+</html>
