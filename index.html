@@ -1222,6 +1222,177 @@
     }
 
     /* ============================================================
+       CASE STUDIES SECTION
+    ============================================================ */
+    #fallstudien {
+      padding: var(--section-pad) 0;
+      background: var(--white);
+    }
+
+    .cases-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: end;
+      margin-bottom: 64px;
+    }
+    .cases-header-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    .cases-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .case-card {
+      position: relative;
+      padding: 48px 44px;
+      background: var(--grey-05);
+      overflow: hidden;
+      transition: background var(--transition), transform var(--transition);
+      cursor: default;
+    }
+    .case-card:hover {
+      background: var(--white);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+      z-index: 1;
+    }
+
+    /* Gold accent top border on hover */
+    .case-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-pale));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.45s ease;
+    }
+    .case-card:hover::before { transform: scaleX(1); }
+
+    /* Large background number */
+    .case-card::after {
+      content: attr(data-num);
+      position: absolute;
+      bottom: -20px;
+      right: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 8rem;
+      font-weight: 700;
+      color: rgba(133,113,78,0.05);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .case-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+    .case-tag::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .case-metric {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .case-metric-value {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      font-weight: 700;
+      color: var(--charcoal);
+      line-height: 1;
+    }
+    .case-metric-label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .case-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--charcoal);
+      line-height: 1.4;
+      margin-bottom: 14px;
+    }
+
+    .case-text {
+      font-size: 14px;
+      color: var(--grey-60);
+      line-height: 1.75;
+      margin-bottom: 28px;
+    }
+
+    .case-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 20px;
+      border-top: 1px solid var(--grey-10);
+    }
+
+    .case-duration {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--grey-60);
+      letter-spacing: 0.04em;
+    }
+    .case-duration svg {
+      width: 14px;
+      height: 14px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .case-result-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--gold);
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 768px) {
+      .cases-header { grid-template-columns: 1fr; gap: 20px; }
+      .cases-header-right { justify-content: flex-start; }
+      .cases-grid { grid-template-columns: 1fr; }
+      .case-card { padding: 36px 28px; }
+      .case-card::after { font-size: 5rem; }
+    }
+
+    /* ============================================================
        TESTIMONIALS SECTION
     ============================================================ */
     #testimonials {
@@ -2293,6 +2464,119 @@
               </div>
             </div>
 
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CASE STUDIES / FALLSTUDIEN
+  ============================================================ -->
+  <section id="fallstudien">
+    <div class="container">
+
+      <div class="cases-header">
+        <div class="reveal">
+          <span class="section-label">Fallstudien</span>
+          <h2 class="section-title">Ergebnisse, die<br />in Zahlen sprechen</h2>
+        </div>
+        <div class="cases-header-right reveal delay-2">
+          <p class="section-subtitle">
+            Reale Projekte. Messbare Wirkung. Nachhaltige Veränderung – in Produktion und Betrieb.
+          </p>
+        </div>
+      </div>
+
+      <div class="cases-grid">
+
+        <!-- Case 1 -->
+        <div class="case-card reveal" data-num="01">
+          <span class="case-tag">Kaltumformung · Werkzeugoptimierung</span>
+          <div class="case-metric">
+            <span class="case-metric-value">EUR 200'000</span>
+            <span class="case-metric-label">/ Jahr gespart</span>
+          </div>
+          <h3 class="case-title">Standzeit-Steigerung Hartmetall-Werkzeug von 5'000 m auf 60'000 m</h3>
+          <p class="case-text">
+            Optimierung von Hartmetall-Werkzeug und Beschichtung in der Kaltumformung mit nachgewiesener Steigerung der Standzeit um den Faktor 12. Trotz höherer Beschichtungskosten resultierte daraus eine signifikante jährliche Kosteneinsparung.
+          </p>
+          <div class="case-footer">
+            <span class="case-duration">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+              </svg>
+              Projektdauer: 9 Monate
+            </span>
+            <span class="case-result-pill">+1'100% Standzeit</span>
+          </div>
+        </div>
+
+        <!-- Case 2 -->
+        <div class="case-card reveal delay-2" data-num="02">
+          <span class="case-tag">Präzisionsstahlrohre · Prozessgeschwindigkeit</span>
+          <div class="case-metric">
+            <span class="case-metric-value">EUR 376'000</span>
+            <span class="case-metric-label">/ Jahr reduziert</span>
+          </div>
+          <h3 class="case-title">500 zusätzliche Maschinenstunden durch Kapazitätsoptimierung</h3>
+          <p class="case-text">
+            Analyse und Optimierung der Prozessgeschwindigkeit in der Kaltumformung von Präzisionsstahlrohren. Signifikante Verbesserung der Anlagenkapazität mit messbarer Kostensenkung und freigesetzten Ressourcen für weiteres Wachstum.
+          </p>
+          <div class="case-footer">
+            <span class="case-duration">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+              </svg>
+              Projektdauer: 6 Monate
+            </span>
+            <span class="case-result-pill">+500 h/Jahr</span>
+          </div>
+        </div>
+
+        <!-- Case 3 -->
+        <div class="case-card reveal" data-num="03">
+          <span class="case-tag">Materialfluss · Reshoring · Schweiz</span>
+          <div class="case-metric">
+            <span class="case-metric-value">–30%</span>
+            <span class="case-metric-label">Durchlaufzeit</span>
+          </div>
+          <h3 class="case-title">Rückverlagerung von China in die Schweiz – von CHF –0.80 auf CHF +0.60 pro Bauteil</h3>
+          <p class="case-text">
+            Optimierung des Materialflusses mit Reduktion der Durchlaufzeit um 30 %. Erfolgreiche Rückverlagerung bei konstant 12'000 Stück Monatsabruf – wirtschaftlich, qualitativ und logistisch überlegen.
+          </p>
+          <div class="case-footer">
+            <span class="case-duration">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+              </svg>
+              Projektdauer: 4 Monate
+            </span>
+            <span class="case-result-pill">+CHF 1.40 / Stück</span>
+          </div>
+        </div>
+
+        <!-- Case 4 -->
+        <div class="case-card reveal delay-2" data-num="04">
+          <span class="case-tag">Energie · OEE · Produktionssteuerung</span>
+          <div class="case-metric">
+            <span class="case-metric-value">CHF 40'000</span>
+            <span class="case-metric-label">/ Monat gespart</span>
+          </div>
+          <h3 class="case-title">Energiekosten von CHF 180'000 auf CHF 140'000 + OEE +13 %</h3>
+          <p class="case-text">
+            Gezielte Anlagenplanung und optimierte Steuerung der Produktionsressourcen mit dauerhafter Senkung der monatlichen Energiekosten und gleichzeitiger Steigerung der Gesamtanlageneffektivität.
+          </p>
+          <div class="case-footer">
+            <span class="case-duration">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+              </svg>
+              Projektdauer: 3 Monate
+            </span>
+            <span class="case-result-pill">OEE +13%</span>
           </div>
         </div>
 
