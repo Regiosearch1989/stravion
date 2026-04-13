@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="de" xml:lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutzerklärung – STRAVION Operations Consulting</title>
+  <meta name="description" content="Datenschutzerklärung von STRAVION Operations Consulting, Dejan Peric, Ringstrasse 12, 9300 Wittenbach." />
+  <meta name="robots" content="noindex, follow" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:      #85714e;
+      --gold-pale: #c4aa82;
+      --gold-bg:   #f7f3ed;
+      --charcoal:  #141414;
+      --grey-80:   #333333;
+      --grey-60:   #555555;
+      --grey-10:   #efefef;
+      --grey-05:   #f8f8f8;
+      --white:     #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', 'Helvetica Neue', sans-serif;
+      color: var(--grey-80);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a { color: var(--gold); text-decoration: none; transition: opacity 0.2s; }
+    a:hover { opacity: 0.75; }
+
+    /* ── Header ── */
+    header {
+      background: var(--charcoal);
+      padding: 0 40px;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(133,113,78,0.2);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .logo img { height: 40px; width: auto; filter: brightness(0) invert(1); }
+    .logo-text { line-height: 1; }
+    .logo-name {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      color: var(--white);
+    }
+    .logo-tagline {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold-pale);
+      margin-top: 3px;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      letter-spacing: 0.04em;
+      transition: color 0.25s;
+    }
+    .back-link:hover { color: var(--gold-pale); opacity: 1; }
+    .back-link svg { width: 16px; height: 16px; }
+
+    /* ── Page Hero ── */
+    .page-hero {
+      background: var(--charcoal);
+      padding: 64px 40px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(133,113,78,0.4), transparent);
+    }
+    .page-hero-inner { max-width: 800px; margin: 0 auto; }
+
+    .page-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-pale);
+      margin-bottom: 16px;
+    }
+    .page-label::before {
+      content: '';
+      display: block;
+      width: 28px;
+      height: 1px;
+      background: var(--gold-pale);
+    }
+    .page-hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .page-hero-sub {
+      margin-top: 14px;
+      font-size: 14px;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Content ── */
+    .content-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 72px 40px 100px;
+    }
+
+    /* Responsible party card */
+    .contact-card {
+      background: var(--gold-bg);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      padding: 28px 32px;
+      margin-bottom: 56px;
+    }
+    .contact-card-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: block;
+    }
+    .contact-card p {
+      font-size: 14px;
+      color: var(--grey-80);
+      line-height: 1.8;
+      font-weight: 500;
+    }
+
+    /* Sections */
+    .legal-section {
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--grey-10);
+    }
+    .legal-section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .legal-section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+    .legal-section-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--gold);
+      opacity: 0.6;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .legal-section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      letter-spacing: 0.02em;
+      line-height: 1.3;
+    }
+    .legal-section p {
+      font-size: 14px;
+      color: var(--grey-60);
+      line-height: 1.85;
+      padding-left: 36px;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--charcoal);
+      padding: 32px 40px;
+      text-align: center;
+      border-top: 1px solid rgba(133,113,78,0.15);
+    }
+    footer p { font-size: 12px; color: rgba(255,255,255,0.25); }
+    footer a { color: rgba(255,255,255,0.4); }
+
+    @media (max-width: 640px) {
+      header { padding: 0 20px; }
+      .page-hero { padding: 48px 20px 56px; }
+      .content-wrap { padding: 48px 20px 72px; }
+      .legal-section p { padding-left: 0; }
+      footer { padding: 24px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="index.html" class="logo">
+      <img src="logo-stravion.png" alt="STRAVION" onerror="this.style.display='none';" />
+      <div class="logo-text">
+        <span class="logo-name">STRAVION</span>
+        <span class="logo-tagline">Operations Consulting</span>
+      </div>
+    </a>
+    <a href="index.html" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M19 12H5M5 12l7 7M5 12l7-7"/>
+      </svg>
+      Zurück zur Website
+    </a>
+  </header>
+
+  <!-- Page Hero -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <span class="page-label">Rechtliches</span>
+      <h1>Datenschutzerklärung</h1>
+      <p class="page-hero-sub">Zuletzt aktualisiert: 2025</p>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <main class="content-wrap">
+
+    <!-- Responsible party -->
+    <div class="contact-card">
+      <span class="contact-card-label">Verantwortliche Stelle</span>
+      <p>
+        Stravion Operations Consulting · Dejan Peric<br />
+        Ringstrasse 12 · 9300 Wittenbach · Schweiz<br />
+        <a href="mailto:info@stravion.ch">info@stravion.ch</a> &nbsp;·&nbsp;
+        <a href="tel:+41795520649">+41 79 552 06 49</a>
+      </p>
+    </div>
+
+    <!-- Sections -->
+    <div class="legal-section">
+      <div class="legal-section-header">
+        <span class="legal-section-num">1.</span>
+        <h2>Allgemeine Hinweise</h2>
+      </div>
+      <p>Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. In dieser Datenschutzerklärung informieren wir Sie darüber, welche Daten wir erheben, wie wir diese verwenden und welche Rechte Sie haben.</p>
+    </div>
+
+    <div class="legal-section">
+      <div class="legal-section-header">
+        <span class="legal-section-num">2.</span>
+        <h2>Erhebung und Verarbeitung personenbezogener Daten</h2>
+      </div>
+      <p>Wir verarbeiten personenbezogene Daten nur, soweit dies zur Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen erforderlich ist.</p>
+    </div>
+
+    <div class="legal-section">
+      <div class="legal-section-header">
+        <span class="legal-section-num">3.</span>
+        <h2>Zugriffsdaten (Server-Logfiles)</h2>
+      </div>
+      <p>Beim Besuch unserer Website werden automatisch Informationen erfasst (z. B. IP-Adresse, Datum und Uhrzeit, Browsertyp). Diese Daten dienen der technischen Sicherheit und Optimierung der Website.</p>
+    </div>
+
+    <div class="legal-section">
+      <div class="legal-section-header">
+        <span class="legal-section-num">4.</span>
+        <h2>Kontaktformular</h2>
+      </div>
+      <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben inklusive der von Ihnen dort angegebenen Kontaktdaten zur Bearbeitung der Anfrage gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.</p>
+    </div>
+
+    <div class="legal-section">
+      <div class="legal-section-header">
+        <span class="legal-section-num">5.</span>
+        <h2>Cookies</h2>
+      </div>
+      <p>Unsere Website kann Cookies verwenden. Cookies richten auf Ihrem Endgerät keinen Schaden an und enthalten keine Viren. Sie dienen dazu, unser Angebot nutzerfreundlicher zu machen.</p>
+    </div>
+
+    <div class="legal-section">
+      <div class="legal-section-header">
+        <span class="legal-section-num">6.</span>
+        <h2>Hosting</h2>
+      </div>
+      <p>Diese Website wird bei Hostpoint AG, Schweiz, gehostet. Die Datenverarbeitung erfolgt gemäss den geltenden Datenschutzbestimmungen.</p>
+    </div>
+
+    <div class="legal-section">
+      <div class="legal-section-header">
+        <span class="legal-section-num">7.</span>
+        <h2>Ihre Rechte</h2>
+      </div>
+      <p>Sie haben das Recht auf Auskunft über Ihre gespeicherten personenbezogenen Daten sowie ein Recht auf Berichtigung, Löschung oder Einschränkung der Verarbeitung. Bitte wenden Sie sich dazu an <a href="mailto:info@stravion.ch">info@stravion.ch</a>.</p>
+    </div>
+
+    <div class="legal-section">
+      <div class="legal-section-header">
+        <span class="legal-section-num">8.</span>
+        <h2>Änderungen</h2>
+      </div>
+      <p>Wir behalten uns vor, diese Datenschutzerklärung jederzeit anzupassen. Die jeweils aktuelle Version ist auf dieser Seite abrufbar.</p>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 STRAVION · Dejan Peric · Ringstrasse 12, 9300 Wittenbach &nbsp;|&nbsp;
+      <a href="impressum.html">Impressum</a> &nbsp;|&nbsp;
+      <a href="index.html">Zurück zur Startseite</a>
+    </p>
+  </footer>
+
+</body>
+</html>
