@@ -52,7 +52,7 @@
     ============================================================ */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html { scroll-behavior: smooth; font-size: 16px; }
+    html { scroll-behavior: smooth; font-size: 16px; overflow-x: hidden; }
 
     body {
       font-family: var(--font-body);
@@ -1544,6 +1544,7 @@
       background: var(--black);
       position: relative;
       overflow: hidden;
+      max-width: 100vw;
     }
 
     #cta-section::before {
@@ -1954,10 +1955,12 @@
       .hero-sub { font-size: 1rem; margin-bottom: 32px; max-width: 100%; }
       .hero-eyebrow { margin-bottom: 20px; }
       .hero-ctas { flex-direction: column; align-items: stretch; }
-      .hero-ctas .btn { text-align: center; justify-content: center; }
+      .hero-ctas .btn { text-align: center; justify-content: center; width: 100%; }
       .hero-trust { margin-top: 40px; padding-top: 28px; }
 
       /* Services */
+      .services-header { grid-template-columns: 1fr; gap: 20px; }
+      .services-header-right { justify-content: flex-start; }
       .services-grid { grid-template-columns: 1fr; }
       .service-card:nth-child(1) { grid-column: span 1; }
       .service-card { padding: 36px 28px; }
@@ -1969,17 +1972,50 @@
       .trust-stats { gap: 28px; }
 
       /* Approach */
+      .approach-flow { grid-template-columns: 1fr; }
+      .approach-flow::before { display: none; }
       .approach-step { padding: 36px 28px; }
 
       /* About */
-      .portrait-frame { max-width: 100%; aspect-ratio: 4/3; }
+      .about-inner { grid-template-columns: 1fr; gap: 48px; }
+      .about-content { padding-left: 0; }
+      .about-portrait { overflow: hidden; padding-bottom: 12px; }
+      .portrait-frame {
+        max-width: 100%;
+        aspect-ratio: 4/3;
+        margin: 0 auto;
+      }
+      .portrait-frame::after { display: none; }
+      .portrait-badge {
+        position: relative;
+        bottom: auto; right: auto;
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 16px;
+        border-radius: 4px;
+      }
 
       /* Diff */
+      .diff-inner { grid-template-columns: 1fr; }
+      .diff-visual-box { max-width: 100%; }
       .diff-point { padding: 20px 0; }
+      .diff-point:hover { transform: none; }
+
+      /* Cases */
+      .cases-header { grid-template-columns: 1fr; gap: 20px; }
+      .cases-header-right { justify-content: flex-start; }
+      .cases-grid { grid-template-columns: 1fr; }
+      .case-card { padding: 36px 24px; }
+      .case-card::after { font-size: 5rem; }
+      .case-footer { flex-wrap: wrap; gap: 12px; }
 
       /* CTA */
       .cta-actions { flex-direction: column; align-items: center; }
       .cta-actions .btn { width: 100%; max-width: 360px; justify-content: center; }
+
+      /* Contact */
+      .contact-inner { grid-template-columns: 1fr; gap: 48px; }
 
       /* Form */
       .form-grid { grid-template-columns: 1fr; }
@@ -1990,10 +2026,11 @@
       /* Footer */
       .footer-inner { grid-template-columns: 1fr; gap: 40px; }
       .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .footer-legal { flex-wrap: wrap; gap: 12px; }
 
       /* Testimonials */
-      .testimonial-card { padding: 32px 24px; }
       .testimonials-grid { grid-template-columns: 1fr; }
+      .testimonial-card { padding: 32px 24px; }
     }
 
     @media (max-width: 480px) {
@@ -2001,12 +2038,16 @@
       .hero-title { font-size: clamp(1.5rem, 7.5vw, 1.9rem); }
       .hero-sub { font-size: 0.95rem; }
       .hero-eyebrow { font-size: 10px; }
-      .hero-trust { flex-direction: column; align-items: flex-start; }
-      .portrait-badge { bottom: -12px; right: -12px; }
+      .hero-trust { flex-direction: column; align-items: flex-start; gap: 12px; }
       .section-title { font-size: clamp(1.5rem, 6vw, 2rem); }
       .approach-step-title { font-size: 1.25rem; }
       .service-card { padding: 28px 20px; }
       .testimonial-card { padding: 28px 20px; }
+      .trust-stats { gap: 20px; flex-wrap: wrap; }
+      .trust-stat { min-width: 80px; }
+      .diff-visual-box { padding: 32px 28px; }
+      .cta-title { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+      .footer-legal { flex-direction: column; gap: 8px; }
     }
   </style>
 </head>
