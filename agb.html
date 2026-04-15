@@ -27,7 +27,7 @@
       --white:     #ffffff;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       font-family: 'Inter', 'Helvetica Neue', sans-serif;
@@ -53,7 +53,7 @@
       border-bottom: 1px solid rgba(133,113,78,0.2);
     }
     .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .logo img { height: 40px; width: auto; filter: invert(1); }
+    .logo img { height: 40px; width: auto; border-radius: 3px; }
     .logo-text { line-height: 1; }
     .logo-name {
       display: block;
@@ -332,7 +332,7 @@
     <div class="page-hero-inner">
       <span class="page-label">Rechtliches</span>
       <h1>Allgemeine Geschäftsbedingungen</h1>
-      <p class="page-hero-meta">Stravion, Inh. Peric &nbsp;·&nbsp; Sitz: Wittenbach, Schweiz &nbsp;·&nbsp; Stand: 2025</p>
+      <p class="page-hero-meta">Stravion, Inh. Peric &nbsp;·&nbsp; Sitz: Wittenbach, Schweiz &nbsp;·&nbsp; Stand: 15. April 2026</p>
     </div>
   </div>
 
@@ -343,15 +343,15 @@
     <aside class="toc">
       <p class="toc-title">Inhalt</p>
       <div class="toc-list">
-        <a href="#s1" class="toc-item"><span class="toc-item-num">1.</span>Geltungsbereich</a>
-        <a href="#s2" class="toc-item"><span class="toc-item-num">2.</span>Vertragsabschluss</a>
-        <a href="#s3" class="toc-item"><span class="toc-item-num">3.</span>Leistungen</a>
-        <a href="#s4" class="toc-item"><span class="toc-item-num">4.</span>Leistungsänderungen</a>
-        <a href="#s5" class="toc-item"><span class="toc-item-num">5.</span>Mitwirkung</a>
-        <a href="#s6" class="toc-item"><span class="toc-item-num">6.</span>Dritte</a>
-        <a href="#s7" class="toc-item"><span class="toc-item-num">7.</span>Termine</a>
-        <a href="#s8" class="toc-item"><span class="toc-item-num">8.</span>Vergütung</a>
-        <a href="#s9" class="toc-item"><span class="toc-item-num">9.</span>Abnahme</a>
+        <a href="#s1"  class="toc-item"><span class="toc-item-num">1.</span>Geltungsbereich</a>
+        <a href="#s2"  class="toc-item"><span class="toc-item-num">2.</span>Vertragsabschluss</a>
+        <a href="#s3"  class="toc-item"><span class="toc-item-num">3.</span>Leistungen</a>
+        <a href="#s4"  class="toc-item"><span class="toc-item-num">4.</span>Leistungsänderungen</a>
+        <a href="#s5"  class="toc-item"><span class="toc-item-num">5.</span>Mitwirkung</a>
+        <a href="#s6"  class="toc-item"><span class="toc-item-num">6.</span>Beizug Dritter</a>
+        <a href="#s7"  class="toc-item"><span class="toc-item-num">7.</span>Termine</a>
+        <a href="#s8"  class="toc-item"><span class="toc-item-num">8.</span>Vergütung</a>
+        <a href="#s9"  class="toc-item"><span class="toc-item-num">9.</span>Prüfung &amp; Abnahme</a>
         <a href="#s10" class="toc-item"><span class="toc-item-num">10.</span>Vertraulichkeit</a>
         <a href="#s11" class="toc-item"><span class="toc-item-num">11.</span>Geist. Eigentum</a>
         <a href="#s12" class="toc-item"><span class="toc-item-num">12.</span>Gewährleistung</a>
@@ -359,7 +359,7 @@
         <a href="#s14" class="toc-item"><span class="toc-item-num">14.</span>Freistellung</a>
         <a href="#s15" class="toc-item"><span class="toc-item-num">15.</span>Vertragsdauer</a>
         <a href="#s16" class="toc-item"><span class="toc-item-num">16.</span>Höhere Gewalt</a>
-        <a href="#s17" class="toc-item"><span class="toc-item-num">17.</span>Schluss</a>
+        <a href="#s17" class="toc-item"><span class="toc-item-num">17.</span>Schlussbestimmungen</a>
       </div>
     </aside>
 
@@ -367,7 +367,7 @@
     <main class="content">
 
       <div class="intro-card">
-        <p>Diese AGB gelten für sämtliche Angebote, Verträge und Leistungen von <strong>Stravion, Inh. Milisav Peric</strong>, Ringstrasse 12, 9300 Wittenbach, Schweiz. Fragen: <a href="mailto:info@stravion.ch">info@stravion.ch</a> &nbsp;·&nbsp; UID: CHE-330.554.380</p>
+        <p>Diese AGB gelten für sämtliche Angebote, Verträge und Leistungen von <strong>Stravion, Inh. Peric</strong>, Ringstrasse 12, 9300 Wittenbach, Schweiz. Fragen: <a href="mailto:info@stravion.ch">info@stravion.ch</a> &nbsp;·&nbsp; UID: CHE-330.554.380</p>
       </div>
 
       <!-- 1 -->
@@ -377,7 +377,7 @@
           <h2>Geltungsbereich</h2>
         </div>
         <div class="agb-paras">
-          <div class="agb-para"><span class="agb-para-num">1.1</span><span class="agb-para-text">Diese Allgemeinen Geschäftsbedingungen („AGB") gelten für sämtliche Angebote, Verträge, Lieferungen und Leistungen von Stravion, Inh. Milisav Peric, mit Sitz in Wittenbach, Schweiz („Stravion"), gegenüber seinen Kunden („Kunde").</span></div>
+          <div class="agb-para"><span class="agb-para-num">1.1</span><span class="agb-para-text">Diese Allgemeinen Geschäftsbedingungen („AGB") gelten für sämtliche Angebote, Verträge, Lieferungen und Leistungen von Stravion, Inh. Peric, mit Sitz in Wittenbach, Schweiz („Stravion"), gegenüber seinen Kunden („Kunde").</span></div>
           <div class="agb-para"><span class="agb-para-num">1.2</span><span class="agb-para-text">Allgemeine Geschäftsbedingungen des Kunden finden keine Anwendung, auch wenn Stravion ihnen nicht ausdrücklich widerspricht. Vorbehalten bleiben zwingende gesetzliche Bestimmungen.</span></div>
           <div class="agb-para"><span class="agb-para-num">1.3</span><span class="agb-para-text">Abweichungen, Nebenabreden oder Ergänzungen bedürfen zu ihrer Gültigkeit der Schrift- oder Textform (insbesondere E-Mail). Individuell schriftlich vereinbarte Regelungen gehen diesen AGB vor.</span></div>
         </div>
@@ -487,7 +487,7 @@
           <h2>Prüfung und Genehmigung von Arbeitsergebnissen</h2>
         </div>
         <div class="agb-paras">
-          <div class="agb-para"><span class="agb-para-num">9.1</span><span class="agb-para-text">Der Kunde hat übergebene Arbeitsergebnisse, Konzepte, Auswertungen, Berichte, Präsentationen, Empfehlungen oder sonstige Deliverables unverzüglich zu prüfen.</span></div>
+          <div class="agb-para"><span class="agb-para-num">9.1</span><span class="agb-para-text">Der Kunde hat übergebene Arbeitsergebnisse, Konzepte, Auswertungen, Berichte, Präsentationen, Empfehlungen oder sonstige Desiderables unverzüglich zu prüfen.</span></div>
           <div class="agb-para"><span class="agb-para-num">9.2</span><span class="agb-para-text">Beanstandungen sind innert fünf Arbeitstagen ab Übergabe schriftlich mitzuteilen. Erfolgt innert dieser Frist keine begründete Rüge, gelten die betreffenden Leistungen als genehmigt.</span></div>
           <div class="agb-para"><span class="agb-para-num">9.3</span><span class="agb-para-text">Bei rechtzeitig gerügten Mängeln hat Stravion zunächst das Recht auf Nachbesserung innert angemessener Frist. Weitergehende Rechte bestehen nur im Rahmen der zwingenden gesetzlichen Bestimmungen und dieser AGB.</span></div>
         </div>
@@ -500,7 +500,7 @@
           <h2>Vertraulichkeit und Datenschutz</h2>
         </div>
         <div class="agb-paras">
-          <div class="agb-para"><span class="agb-para-num">10.1</span><span class="agb-para-text">Beide Parteien verpflichten sich, sämtliche ihnen im Zusammenhang mit dem Vertragsverhältnis bekanntwerdenden nicht öffentlichen kaufmännischen, technischen, organisatorischen und personenbezogenen Informationen vertraulich zu behandeln.</span></div>
+          <div class="agb-para"><span class="agb-para-num">10.1</span><span class="agb-para-text">Beide Parteien verpflichten sich, sämtliche ihnen im Zusammenhang mit dem Vertragsverhältnis bekanntgewordenen nicht öffentlichen kaufmännischen, technischen, organisatorischen und personenbezogenen Informationen vertraulich zu behandeln.</span></div>
           <div class="agb-para"><span class="agb-para-num">10.2</span><span class="agb-para-text">Die Geheimhaltungspflicht gilt nicht für Informationen, die nachweislich allgemein bekannt sind, ohne Vertragsverletzung bekannt werden, aufgrund gesetzlicher Pflicht offenzulegen sind oder mit vorgängiger Zustimmung der anderen Partei offengelegt werden dürfen.</span></div>
           <div class="agb-para"><span class="agb-para-num">10.3</span><span class="agb-para-text">Stravion darf personenbezogene Daten im Rahmen der Vertragsabwicklung nach Massgabe des anwendbaren Datenschutzrechts bearbeiten und, soweit erforderlich, an beigezogene Dritte oder Auftragsbearbeiter weitergeben.</span></div>
           <div class="agb-para"><span class="agb-para-num">10.4</span><span class="agb-para-text">Der Kunde garantiert, dass von ihm übermittelte Daten rechtmässig erhoben und zur Bearbeitung durch Stravion freigegeben sind. Der Kunde hält Stravion von Ansprüchen Dritter frei, die aus einer rechtswidrigen Datenübermittlung oder Datenverwendung im Verantwortungsbereich des Kunden resultieren.</span></div>
@@ -524,7 +524,7 @@
       <div class="agb-section" id="s12">
         <div class="agb-section-header">
           <span class="agb-section-num">12.</span>
-          <h2>Gewährleistung / Keine Erfolgsgarantie</h2>
+          <h2>Gewährleistung</h2>
         </div>
         <div class="agb-paras">
           <div class="agb-para"><span class="agb-para-num">12.1</span><span class="agb-para-text">Stravion erbringt die Leistungen mit branchenüblicher Sorgfalt, nach bestem Wissen und auf Grundlage der zum Leistungszeitpunkt verfügbaren Informationen. Eine über die sorgfältige Vertragserfüllung hinausgehende Gewährleistung oder Erfolgshaftung wird nicht übernommen.</span></div>
@@ -543,7 +543,7 @@
           <h2>Haftung</h2>
         </div>
         <div class="agb-paras">
-          <div class="agb-para"><span class="agb-para-num">13.1</span><span class="agb-para-text">Stravion haftet – gleich aus welchem Rechtsgrund – ausschliesslich für direkte Schäden, die dem Kunden nachweislich durch eine vorsätzliche oder grobfahrlässige Vertragsverletzung von Stravion verursacht wurden.</span></div>
+          <div class="agb-para"><span class="agb-para-num">13.1</span><span class="agb-para-text">Stravion haftet gleich aus welchem Rechtsgrund ausschliesslich für direkte Schäden, die dem Kunden nachweislich durch eine vorsätzliche oder grobfahrlässige Vertragsverletzung von Stravion verursacht wurden.</span></div>
           <div class="agb-para"><span class="agb-para-num">13.2</span><span class="agb-para-text">Soweit gesetzlich zulässig, ist jede Haftung für leichte Fahrlässigkeit ausgeschlossen. Nicht ausgeschlossen werden kann nach schweizerischem Recht eine zum Voraus wegbedungene Haftung für rechtswidrige Absicht oder grobe Fahrlässigkeit.</span></div>
           <div class="agb-para"><span class="agb-para-num">13.3</span><span class="agb-para-text">In jedem Fall ausgeschlossen ist, soweit gesetzlich zulässig, die Haftung für indirekte Schäden und Folgeschäden, namentlich entgangenen Gewinn, Produktionsausfall, Stillstandskosten, Kapazitätsverluste, Nutzungsausfall, Reputationsschäden, Vertragsstrafen gegenüber Dritten, Drittansprüche, Rückrufkosten, Datenverluste, Mehraufwand des Kunden oder nicht realisierte Einsparungen.</span></div>
           <div class="agb-para"><span class="agb-para-num">13.4</span><span class="agb-para-text">Ebenfalls ausgeschlossen ist, soweit gesetzlich zulässig, jede Haftung für Schäden, Nachteile oder Mehrkosten, die auf kundenseitige Vorgaben, Weisungen, Freigaben, Unterlassungen, verspätete Entscheide, unvollständige Mitwirkung, fehlerhafte Daten, Systemausfälle, Sicherheitsmängel, fehlende Ressourcen, Eingriffe des Kunden oder seiner Mitarbeitenden sowie auf Handlungen oder Unterlassungen beigezogener Dritter zurückzuführen sind.</span></div>
@@ -601,10 +601,11 @@
 
       <!-- Company strip -->
       <div class="company-strip">
-        <span>Stravion, Inh. Peric</span>
+        <span><strong>Stravion, Inh. Peric</strong></span>
         <span>Ringstrasse 12, 9300 Wittenbach</span>
         <span><a href="mailto:info@stravion.ch">info@stravion.ch</a></span>
         <span>UID: CHE-330.554.380</span>
+        <span>Stand: 15. April 2026</span>
       </div>
 
     </main>
@@ -612,7 +613,7 @@
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 STRAVION · Dejan Peric · Ringstrasse 12, 9300 Wittenbach &nbsp;|&nbsp;
+    <p>© 2026 STRAVION · Dejan Peric · Ringstrasse 12, 9300 Wittenbach &nbsp;|&nbsp;
       <a href="impressum.html">Impressum</a> &nbsp;|&nbsp;
       <a href="datenschutz.html">Datenschutz</a> &nbsp;|&nbsp;
       <a href="index.html">Startseite</a>
